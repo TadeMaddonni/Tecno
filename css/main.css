@@ -11,12 +11,16 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* Header */
 .navbar {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.13);
   margin-bottom: 40px;
+  position: sticky;
+  z-index: 200;
+  top: 0;
 }
 
 .brandName {
@@ -24,14 +28,45 @@ body {
   font-weight: 600;
 }
 
+.brandName:hover {
+  color: #7B68EC;
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
+  transform: translateX(3px);
+  transition: 0.3s;
+}
+
 .nav-link {
   color: #7B68EC;
   font-weight: 500;
   font-size: 13px;
 }
-
-.nav-link .active {
+.nav-link:hover {
   color: #7B68EC;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.nav-link:active {
+  color: #7B68EC;
+}
+
+.dropdown-menu {
+  background-color: #7B68EC;
+  border: 1px solid #fff;
+}
+
+.dropdown-item {
+  border: none;
+  color: #fff;
+}
+.dropdown-item:hover {
+  color: #fff;
+  background-color: #7B68EC;
+  font-weight: 600;
 }
 
 .loginBg {
@@ -47,6 +82,12 @@ body {
   font-weight: 400;
 }
 
+.login-btn:hover {
+  color: #fff;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
 /* Main Index */
 .mainIndex {
   margin-top: 60px;
@@ -54,6 +95,7 @@ body {
 
 .sectionOne {
   margin-top: 40px;
+  margin-bottom: 50px;
   background-color: #7B68EC;
   height: 40vh;
   width: 100%;
@@ -96,10 +138,12 @@ body {
   color: #7B68EC;
   background-color: #fff;
 }
-
-.icons {
+.btnTienda:hover {
   color: #7B68EC;
-  fill: #7B68EC;
+  font-weight: 600;
+  transform: scale(1.1);
+  transition: 0.3s;
+  box-shadow: 2px 2px 2px rgba(255, 254, 254, 0.219);
 }
 
 #nosotros {
@@ -141,6 +185,11 @@ body {
 .recorridoContainer {
   display: flex;
   gap: 10px;
+}
+
+.icons {
+  color: #7B68EC;
+  fill: #7B68EC;
 }
 
 .recorridoLinea {

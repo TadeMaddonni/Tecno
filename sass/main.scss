@@ -14,6 +14,7 @@
 }
 .sectionOne{
     margin-top: 40px;
+    margin-bottom: 50px;
     background-color: $main-color;
     height: 40vh;
     width: 100%;
@@ -56,12 +57,17 @@
     text-decoration: none;
     color: $main-color;
     background-color: $secondary-color;
+
+    &:hover{
+        color: $main-color;
+        font-weight: 600;
+        transform: scale(1.1);
+        transition: .3s;
+        box-shadow: 2px 2px 2px rgba(255, 254, 254, 0.219);
+    }
 }
 
-.icons{
-    color: #7B68EC;
-    fill: $main-color;
-}
+
 
 #nosotros{
     margin-top: 70px;
@@ -102,6 +108,10 @@
 .recorridoContainer{
     display: flex;
     gap: 10px;
+}
+.icons{
+    color: #7B68EC;
+    fill: $main-color;
 }
 
 .recorridoLinea{
