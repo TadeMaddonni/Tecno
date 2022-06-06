@@ -1,0 +1,219 @@
+/* Variables */
+/* Colores */
+/* Fonts */
+/* Globals */
+/* Universal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Header */
+.navbar {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.13);
+  margin-bottom: 40px;
+}
+
+.brandName {
+  color: #7B68EC;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: #7B68EC;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.nav-link .active {
+  color: #7B68EC;
+}
+
+.loginBg {
+  width: fit-content;
+  padding: 4px 10px;
+  background-color: #7B68EC;
+  border-radius: 4px;
+}
+
+.login-btn {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* Main Index */
+.mainIndex {
+  margin-top: 60px;
+}
+
+.sectionOne {
+  margin-top: 40px;
+  background-color: #7B68EC;
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.sectionContainer {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainText {
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  font-size: 35px;
+}
+.mainText span {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.btnTienda {
+  width: 100px;
+  height: 24px;
+  padding-top: 3px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  color: #7B68EC;
+  background-color: #fff;
+}
+
+.icons {
+  color: #7B68EC;
+  fill: #7B68EC;
+}
+
+#nosotros {
+  margin-top: 70px;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nosotrosContainer {
+  padding: 10px;
+  width: 30%;
+  height: 70%;
+  border-radius: 5px;
+  background-color: #7B68EC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nosotrosTitle {
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.nosotrosText {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+}
+
+.recorridoContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.recorridoLinea {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  width: 2px;
+  height: 30px;
+  background-color: #7B68EC;
+}
+
+.recorridoText {
+  color: #7B68EC;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Footer */
+.footer {
+  margin-top: 100px;
+  height: 60px;
+  background-color: #7B68EC;
+  display: flex;
+}
+
+.footerTextContainer {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerText {
+  margin: 0;
+  color: #fff;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+.footerListContainer {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerList {
+  margin: 0;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+.footerList li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,56 @@
+.footer{
+    margin-top: 100px;
+    height: 60px;
+    background-color: $main-color;
+    display: flex;
+}
+
+.footerTextContainer{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerText{
+    margin: 0;
+    color: $secondary-color;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.footerListContainer{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerList{
+    margin: 0;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-link{
+    text-decoration: none;
+    color: $secondary-color;
+    font-weight: 500;
+    font-size: 10px;
+}
+.footerList li:hover{
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+.footer-link:hover{
+    color: $secondary-color;
+    font-weight: 600;
+    transition: .3s;
+}
