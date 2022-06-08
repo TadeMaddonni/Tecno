@@ -275,13 +275,16 @@ label{
 }
 
 .contactoInputContainer{
+    background-color: $secondary-color;
     height: 35px;
+    border-radius: 4px;
 }
 
 .textareaContainer{
     height: 40px;
 }
 .contactoInput{
+    padding: 4px;
     width:100%;
     height: 100%;
     border-radius: 4px;
@@ -301,6 +304,7 @@ label{
     display: flex;
     gap: 20px;
     justify-content: center;
+    background-color: transparent;
 }
 
 .contactoBtn{
@@ -311,5 +315,58 @@ label{
     font-size: 13px;
     font-weight: 500;
 }
+
+/* Main Login */
+
+.loginFormSection{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginFormContainer{
+    margin-top: 20px;
+    height: 420px;
+    width: 350px;
+    background-color: $main-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.75);
+}
+
+.loginForm{
+    background-color: $main-color;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.passOlvidadaContainer{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.loginPassOlvidada{
+    margin-top: 5px;
+    font-size: 12px;
+    color: $secondary-color;
+    text-align: center;
+}
+
+
 /* Footer */
 @import 'partials/footer';
+
+
+
+/* Media Mobile */
+
+@import 'media/mobile';
+

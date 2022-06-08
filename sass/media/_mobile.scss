@@ -1,0 +1,56 @@
+@media screen and (min-width:230px) and (max-width:550px){
+    
+/*     .navbar{
+        width: 200px;
+    }
+
+
+    main{
+        width: 100vw;
+    }
+    
+
+    .sectionOne{
+        width: 100px;
+        margin: 0;
+    }
+    footer{
+        width: 300px;
+    }
+
+
+ */ 
+    #nosotros{
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+    }
+    .nosotrosContainer{
+        width:80%;
+    }
+    .sectionContainer{
+        width: 90%;
+    }
+    .mainText{
+        font-size: 26px;
+    }
+
+    .footerListContainer{
+        display: none;
+    }
+    .footerTextContainer{
+        width: 100%;
+    }
+    .footerList{
+        display: none;
+    }
+    .contactSubtitle {
+        margin-top: 20px;
+        margin-left: 20px;
+        font-size: 30px;
+    }
+
+    .formSection{
+        padding: 20px;
+    }
+}
