@@ -1,7 +1,27 @@
 
-/* Colores */
+/* Colors */
 $main-color:#7B68EC;
 $secondary-color:#fff;
 
 /* Fonts */
 $main-font:'Montserrat', sans-serif;
+
+/* Sizes */
+$titles:45px;
+$subtitles:35px;
+$text:30px;
+$prices:15px;
+
+/* Mixins */
+
+@mixin  title {
+    font-size: $titles;
+    font-weight: 600;
+    color: $main-color;
+}
+
+@mixin subtitle {
+    font-size: $subtitles;
+    font-weight: 600;
+    color: $main-color;
+}
