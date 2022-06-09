@@ -157,12 +157,15 @@
     flex-direction: column;
     gap: 40px;
 }
-
+.linkSelfPage{
+    text-decoration: none;
+}
 .sectionAuris__title{
     margin-left: 20px;
     color: $main-color;
     font-size: 35px;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .aurisFirstLine{

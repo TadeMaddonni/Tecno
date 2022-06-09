@@ -268,11 +268,16 @@ img::selection {
   gap: 40px;
 }
 
+.linkSelfPage {
+  text-decoration: none;
+}
+
 .sectionAuris__title {
   margin-left: 20px;
   color: #7B68EC;
   font-size: 35px;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .aurisFirstLine {
