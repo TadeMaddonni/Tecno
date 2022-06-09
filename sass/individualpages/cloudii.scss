@@ -1,0 +1,100 @@
+
+.mainProductPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.productSection{
+    width: 60%;
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    align-items: space-around;
+    justify-content: space-between;
+}
+
+.imgContainer{
+    box-shadow: 3px 3px 3px rgba(175, 174, 174, 0.493);
+    width: 40%;
+    height:330px;
+}
+.individualImg{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.infoContainer{
+    width: 55%;
+    height: 270px;
+}
+.productTitle{
+    font-size: 45px;
+    font-weight: 600;
+    color: $main-color;
+}
+
+.productPrice{
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: $main-color;
+}
+
+
+.productDescription {
+    width: 70%;
+    color: $main-color;
+    font-weight: 500;
+}
+.buyTermsSection{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 60%;
+}
+
+.buyTerms{
+    font-size: 14px;
+    color: $main-color;
+
+    &:hover{
+        font-weight: 600;
+        transition: .3s;
+        color: $main-color;
+    }
+
+    &:visited{
+        color: $main-color;
+    }
+}
+
+.descriptionSection{
+    width: 60%;
+}
+
+.descriptionContainer{
+    display: flex;
+    gap: 5px;
+}
+
+.productEspDescription{
+    color: $main-color;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.addToCartSection{
+    display: flex;
+    gap: 5px;
+}
+.paymentMethodsSection{
+    display: flex;
+    gap: 10px;
+}
+.paymentMethods{
+    color: $main-color;
+    fill: $main-color;
+}
