@@ -66,42 +66,42 @@
     <main class="mainTienda">
         <section class="sectionTitle"> 
             <div class="titleContainer">
-                <h1 class="titleTienda">Contacto</h1>
+                <h1 class="titleTienda">Bienvenido/a!</h1>
             </div>
         </section>
 
-        <section class="sectionSubtitle">
-            <div>
-                <h2 class="contactSubtitle">Llená este formulario..</h2>
-            </div>
-        </section>
 
-        <section class="formSection">
-            <div class="formContainer">
-                <form class="contactoForm" action="" method="POST">
+        <section class="loginFormSection">
+            <div class="loginFormContainer">
+                <form class="loginForm" action="" method="POST">
+
                     <div class="contactoInputContainer">
                         <label for="nombre">Nombre:</label>
-                        <input class="contactoInput" type="text" name="nombre" placeholder="ingrese su nombre">
+                        <input class="contactoInput" type="text" name="nombre" placeholder="Ingrese su Nombre">
                     </div>
 
                     <div class="contactoInputContainer">
                         <label for="apellido">Apellido:</label>
-                        <input class="contactoInput" type="text" name="apellido" placeholder="ingrese su apellido">
+                        <input class="contactoInput" type="text" name="apellido" placeholder="Ingrese su Apellido">
                     </div>
+
                     
                     <div class="contactoInputContainer">
                         <label for="email">Email:</label>
                         <input class="contactoInput" type="email" name="email" placeholder="Ingrese su E-mail">
                     </div>
-                    <div class=" textareaCOntainer">
-                        <label for="consulta">Consulta:</label>
-                        <textarea class="contactoInput" name="consulta" id="" cols="35" rows="5" placeholder="Ingrese su consulta"></textarea>
+
+                    <div class="contactoInputContainer">
+                        <label for="password">Contraseña:</label>
+                        <input class="contactoInput" type="password" name="password" placeholder="Ingrese su contraseña">
                     </div>
 
+                    <br>
                     <div class="contactoInputContainer  contactoBtnContainer">
-                        <input class="contactoBtn" type="submit" value="Enviar">
-                        <input class="contactoBtn" type="reset" value="Borrar">
-                        <!-- boton para javascript -->
+                        <input class="contactoBtn" type="submit" value="Registrarse">
+                    </div>
+                    <div class="passOlvidadaContainer">
+                        <a class="loginPassOlvidada" href="">Terminos y condiciones</a>
                     </div>
                 </form>
             </div>
