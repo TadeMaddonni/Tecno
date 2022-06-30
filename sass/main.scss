@@ -368,6 +368,72 @@ label{
     text-align: center;
 }
 
+/* Comienza carrito */
+
+
+.cartSection{
+    height:500px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.cartContainer{
+    padding: 15px;
+    width: 60%;
+    height: 80%;
+    background-color: $main-color;
+    border-radius: 6px;
+    box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 21px -4px rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+}
+
+.cartDivisions{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+}
+
+.cartProductContainer{
+    margin-left: 30px;
+    grid-column: 1/2;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.cartCantidadContainer{
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartPrecioContainer{
+    padding-top: 5px;
+    grid-column: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartTitles{
+    padding-top: 5px;
+    margin: 0;
+    height: fit-content;
+    font-size: 20px;
+    font-weight: 600;
+    color: $secondary-color
+}
+
+.cartLines{
+    margin: 5px 10px;
+    height: 2px;
+    background-color: $secondary-color
+}
+
 /* Comienza main Paginas individuales! */
 @import 'individualpages/cloudii.scss';
 
@@ -377,6 +443,5 @@ label{
 
 
 /* Media Mobile */
-
 @import 'media/mobile';
 
