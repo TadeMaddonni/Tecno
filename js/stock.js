@@ -1,5 +1,5 @@
 
-const productos = [
+const PRODUCTOS = [
 //Comienza carga de productos
     {
         id: 1,

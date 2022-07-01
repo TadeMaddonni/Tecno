@@ -144,6 +144,14 @@
     align-items: center
 }
 
+#sectionProductos{
+    margin-top: 50px;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-around;
+    row-gap: 5rem;
+}
+
 .titleTienda{
     font-size: 40px;
     color: $secondary-color;
@@ -168,15 +176,9 @@
     text-decoration: none;
 }
 
-.aurisFirstLine{
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 
 .aurisProduct{
+    justify-self: center;
     /* border: 3px solid $main-color; */
 /*     box-shadow: 3px 3px 3px rgba(175, 174, 174, 0.493) */
 
@@ -229,6 +231,11 @@
     color: $main-color;
     font-size: 14px;
     font-weight: 500;
+}
+
+.addToCartBtn{
+    border: none;
+    background-color: transparent;
 }
 
 /* Main contacto */
@@ -432,6 +439,14 @@ label{
     margin: 5px 10px;
     height: 2px;
     background-color: $secondary-color
+}
+
+.contentContainer{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 30px;
+    background-color: white;
 }
 
 /* Comienza main Paginas individuales! */
