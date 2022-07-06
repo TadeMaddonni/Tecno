@@ -202,7 +202,7 @@ const PRODUCTOS = [
     {
         id: 16,
         nombre: "Xiaomi redmi note 10",
-        Img: "../../assets/imgs/productos/celus/xiaomi10.jpg",
+        Img: "../assets/imgs/productos/celus/xiaomi10.jpg",
         tipo: "cels",
         precio: 50000,
         desc: "sadas",
@@ -215,7 +215,7 @@ const PRODUCTOS = [
     {
         id: 17,
         nombre: "Samsung galaxy Z Flip",
-        Img: "../../assets/imgs/productos/celus/samsungflip.jpg",
+        Img: "../assets/imgs/productos/celus/samsungflip.jpg",
         tipo: "cels",
         precio:169000,
         desc: "asdad",
@@ -228,7 +228,7 @@ const PRODUCTOS = [
     {
         id: 18,
         nombre: "Iphone 12 Pro",
-        Img: "../../assets/imgs/productos/celus/iphonedoce.jpg",
+        Img: "../assets/imgs/productos/celus/iphonedoce.jpg",
         tipo: "cels",
         precio:180000,
         desc: "asa",
