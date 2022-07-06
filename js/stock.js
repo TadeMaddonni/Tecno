@@ -228,7 +228,7 @@ const PRODUCTOS = [
     {
         id: 18,
         nombre: "Iphone 12 Pro",
-        Img: "../../assets/imgs/productos/celus/iphonedoce .jpg",
+        Img: "../../assets/imgs/productos/celus/iphonedoce.jpg",
         tipo: "cels",
         precio:180000,
         desc: "asa",
