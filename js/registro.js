@@ -1,7 +1,7 @@
 
 class usuarios {
     constructor(nombre, apellido, email, password) {
-        this.nombre = nombre,
+            this.nombre = nombre,
             this.apellido = apellido,
             this.email = email,
             this.password = password;
@@ -11,6 +11,13 @@ class usuarios {
 const cargarEnStorage = (key,value) => {
     localStorage.setItem(key,value);
 }
+
+// Obtenemos data de registro almacenada y la parseamos a objetos
+let userAlmacenado = localStorage.getItem('usuario');
+JSON.parse(userAlmacenado); 
+console.log(userAlmacenado);
+console.log(typeof userAlmacenado);     
+
 
 // Variable global del usuario
 
