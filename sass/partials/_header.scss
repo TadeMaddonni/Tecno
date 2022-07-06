@@ -55,7 +55,16 @@
 
 
 
+.btn{
+    color: $secondary-color;
+    border: none;
 
+}
+
+.no-btn{
+    background-color: transparent;
+    border: none;
+}
 
 .loginBg{
     width: fit-content;
@@ -75,4 +84,5 @@
     color:$secondary-color;
     font-weight: 700;
     transition: .3s;
+    border: none;
 }

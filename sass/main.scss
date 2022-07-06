@@ -12,6 +12,23 @@
 .mainIndex{
     margin-top: 60px;
 }
+
+.modal-header{
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.13);
+
+}
+.modal-title{
+    color: $main-color;
+    font-weight: 600;
+}
+
+.mensajeError{
+    font-size: 14px;
+    text-align: center;
+    color: $secondary-color;
+    font-weight: 400;
+    display: block;
+}
 .sectionOne{
     margin-top: 40px;
     margin-bottom: 50px;
@@ -309,7 +326,7 @@ label{
         padding-top: 10px;
         font-style: italic;
         color: $main-color;
-        font-weight: 500;
+        font-weight: 700;
         font-size: 13px;
         padding-left: 10px
     }
@@ -342,8 +359,8 @@ label{
 
 .loginFormContainer{
     margin-top: 20px;
-    height: 420px;
-    width: 350px;
+    height: 600px;
+    width: 400px;
     background-color: $main-color;
     display: flex;
     justify-content: center;
@@ -380,6 +397,7 @@ label{
 
 .cartSection{
     height:500px;
+    width: 95%;
     display: flex;
     justify-content: center;
     align-items: center
@@ -387,7 +405,7 @@ label{
 
 .cartContainer{
     padding: 15px;
-    width: 60%;
+    width: 95%;
     height: 80%;
     background-color: $main-color;
     border-radius: 6px;
@@ -401,7 +419,7 @@ label{
 .cartDivisions{
     width: 100%;
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 0.5 1fr;
 }
 
 .cartProductContainer{
@@ -419,7 +437,7 @@ label{
 }
 
 .cartPrecioContainer{
-    padding-top: 5px;
+
     grid-column: 3/4;
     display: flex;
     align-items: center;
@@ -427,17 +445,16 @@ label{
 }
 
 .cartTitles{
-    padding-top: 5px;
     margin: 0;
     height: fit-content;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
     color: $secondary-color
 }
 
 .cartLines{
     margin: 5px 10px;
-    height: 2px;
+    height: 1px;
     background-color: $secondary-color
 }
 

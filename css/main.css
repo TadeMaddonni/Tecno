@@ -103,6 +103,16 @@ img::selection {
   font-weight: 600;
 }
 
+.btn {
+  color: #fff;
+  border: none;
+}
+
+.no-btn {
+  background-color: transparent;
+  border: none;
+}
+
 .loginBg {
   width: fit-content;
   padding: 4px 10px;
@@ -120,11 +130,29 @@ img::selection {
   color: #fff;
   font-weight: 700;
   transition: 0.3s;
+  border: none;
 }
 
 /* Main Index */
 .mainIndex {
   margin-top: 60px;
+}
+
+.modal-header {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.13);
+}
+
+.modal-title {
+  color: #7B68EC;
+  font-weight: 600;
+}
+
+.mensajeError {
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  display: block;
 }
 
 .sectionOne {
@@ -415,7 +443,7 @@ label {
   padding-top: 10px;
   font-style: italic;
   color: #7B68EC;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 13px;
   padding-left: 10px;
 }
@@ -446,8 +474,8 @@ label {
 
 .loginFormContainer {
   margin-top: 20px;
-  height: 420px;
-  width: 350px;
+  height: 600px;
+  width: 400px;
   background-color: #7B68EC;
   display: flex;
   justify-content: center;
@@ -482,6 +510,7 @@ label {
 /* Comienza carrito */
 .cartSection {
   height: 500px;
+  width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -489,7 +518,7 @@ label {
 
 .cartContainer {
   padding: 15px;
-  width: 60%;
+  width: 95%;
   height: 80%;
   background-color: #7B68EC;
   border-radius: 6px;
@@ -503,7 +532,7 @@ label {
 .cartDivisions {
   width: 100%;
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr 0.5 1fr;
 }
 
 .cartProductContainer {
@@ -522,7 +551,6 @@ label {
 }
 
 .cartPrecioContainer {
-  padding-top: 5px;
   grid-column: 3/4;
   display: flex;
   align-items: center;
@@ -530,17 +558,16 @@ label {
 }
 
 .cartTitles {
-  padding-top: 5px;
   margin: 0;
   height: fit-content;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   color: #fff;
 }
 
 .cartLines {
   margin: 5px 10px;
-  height: 2px;
+  height: 1px;
   background-color: #fff;
 }
 
