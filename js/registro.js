@@ -112,4 +112,6 @@ const passwordRegistro = document.getElementById('registroPassword');
                                 </p>
                             `;
         }
-    }) 
+    });
+
+// Validación LOG IN arranco el 8/7

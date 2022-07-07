@@ -1,5 +1,5 @@
 
-
+//Declaracion y descarga del carrito! 
 let CARRITO =[];
 CARRITO=JSON.parse(localStorage.getItem('carrito'));
 let cartContainer = document.getElementById("contentContainer");
@@ -10,11 +10,8 @@ let cartContainer = document.getElementById("contentContainer");
 //Mostrar carrito
 const mostrarCarrito = () => {
 
-
-
     CARRITO.forEach(prod => {
         
-
         let div = document.createElement("div");
         div.classList.add("productCartContainer")
         div.innerHTML = `
@@ -38,7 +35,6 @@ const mostrarCarrito = () => {
                             <div class="cartPriceContainer">
                                 <p class="cartPrice">$${prod.precio}</p>
                             </div>
-
                         `
 
         cartContainer.appendChild(div);
@@ -51,7 +47,6 @@ mostrarCarrito();
 const mostrarProductos = () => {
 
     const container = document.querySelector("#sectionProductos");
-
 
     PRODUCTOS.forEach(producto => {
         const DIV = document.createElement("div");
@@ -80,9 +75,7 @@ const mostrarProductos = () => {
             cartContainer.innerHTML= "";
             console.log(CARRITO);
             mostrarCarrito();
-
         });
-
     })
 };
 
@@ -105,7 +98,7 @@ const agregarAlCarrito = (productoId) => {
 }
 
 
-
+//Vaciar carrito function
 function vaciarCarrito () {
     CARRITO = [];
     cartContainer.innerHTML= "";
@@ -113,12 +106,12 @@ function vaciarCarrito () {
     mostrarCarrito();
 }
 
-
+// Subida a storage
 const cargarEnStorage = (key,value) => {
     localStorage.setItem(key,value);
 }
 
-// Mostrar carrito (Proximamante)
+
 
 
 
