@@ -8,13 +8,12 @@ class usuarios {
     }
 }
 
-const cargarEnStorage = (key,value) => {
+const cargarDataEnStorage = (key,value) => {
     localStorage.setItem(key,value);
 }
 
 // Obtenemos data de registro almacenada y la parseamos a objetos
-let userAlmacenado = localStorage.getItem('usuario');
-JSON.parse(userAlmacenado); 
+let userAlmacenado = JSON.parse(localStorage.getItem('usuario')) ; 
 console.log(userAlmacenado);
 console.log(typeof userAlmacenado);     
 
@@ -38,7 +37,7 @@ registroForm.addEventListener('submit', (e) => {
     let user1  = new usuarios (nombre, apellido, email, password);
     console.log(user1)
 
-    cargarEnStorage('usuario', JSON.stringify(user1))
+    cargarDataEnStorage('usuario', JSON.stringify(user1))
     
 })
 

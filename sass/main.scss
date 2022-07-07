@@ -396,9 +396,10 @@ label{
 
 
 .cartSection{
-    height:500px;
+    height:max-content;
     width: 95%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center
 }
@@ -419,7 +420,7 @@ label{
 .cartDivisions{
     width: 100%;
     display: grid;
-    grid-template-columns: 3fr 1fr 0.5 1fr;
+    grid-template-columns: 2fr 1fr 0.5fr 1fr;
 }
 
 .cartProductContainer{
@@ -438,7 +439,7 @@ label{
 
 .cartPrecioContainer{
 
-    grid-column: 3/4;
+    grid-column: 4/5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -450,6 +451,14 @@ label{
     font-size: 15px;
     font-weight: 600;
     color: $secondary-color
+}
+
+.modalCarritoTop{
+    max-width: 650px;
+}
+
+.modalCarrito{
+    width: 650px;
 }
 
 .cartLines{
@@ -465,6 +474,89 @@ label{
     padding: 30px;
     background-color: white;
 }
+
+.cartProductName{
+    color: $secondary-color;
+    font-size: 15px;
+}
+
+.cartProductImg{
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+}
+
+
+.productCartContainer{
+    width: 100%;
+    display: grid;
+    margin-top: 15px;
+    padding-left:0px ;
+    grid-template-columns:2fr 1fr 0.5fr 1fr;
+    align-items: center;
+}
+
+.cartProductContainer{
+    margin-left: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.cartProductName{
+    color: $secondary-color;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.cartCantIcon{
+    fill: $secondary-color;
+}
+
+.cartCantContainer{
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+}
+.cartCant{
+    color: $secondary-color;
+    font-size: 15px
+}
+
+.cartCantBtn{
+    background-color: transparent;
+    border: none
+}
+
+.cartPriceContainer{
+    grid-column: 4/5;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.cartPrice{
+    margin: 0;
+    font-size: 15px;
+    color: $secondary-color;
+    font-weight: 500
+}
+.btnsContainer{
+    margin-top: 30px;
+}
+
+.cartBtns{
+    background-color: $main-color;
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    font-size: 14px;
+    color:$secondary-color;
+    font-weight: 600;    
+}
+
 
 /* Comienza main Paginas individuales! */
 @import 'individualpages/cloudii.scss';

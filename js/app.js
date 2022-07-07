@@ -1,6 +1,49 @@
 
 
 let CARRITO =[]; 
+CARRITO=JSON.parse(localStorage.getItem('carrito'));
+console.log(CARRITO)
+
+
+//Mostrar carrito
+const mostrarCarrito = () => {
+
+    CARRITO.forEach(prod => {
+        let cartContainer = document.getElementById("contentContainer");
+
+        let div = document.createElement("div");
+        div.classList.add("productCartContainer")
+        div.innerHTML = `
+                            <div class="cartProductContainer">
+                                <img class="cartProductImg" src=${prod.Img} alt="">
+                                <p class="cartProductName">${prod.nombre}</p>
+                            </div>
+                            <div class="cartCantContainer">
+                                <button class="cartCantBtn"> <svg class="cartCantIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                                        </svg> 
+                                </button>
+                                <span class="cartCant">${prod.cantidad}</span>
+                                <button class="cartCantBtn">
+                                    <svg class="cartCantIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="cartPriceContainer">
+                                <p class="cartPrice">$${prod.precio}</p>
+                            </div>
+                                
+                        `
+
+        cartContainer.appendChild(div);
+    })
+}
+
+
+
+mostrarCarrito();
 
 //Creando Cards dinámicas 
 const mostrarProductos = () => {
@@ -23,7 +66,7 @@ const mostrarProductos = () => {
                                     </svg>
                                 </button>
                             </div>
-                            <p class="aurisPrecio">$${producto.precio}</p>
+                            <p class="aurisPrecio">$${producto.precio * producto.cantidad}</p>
                         `
 
         container.appendChild(DIV);
@@ -43,6 +86,7 @@ mostrarProductos();
 
 //Agregar producto al carrito y almacenarlo en Storage
 const agregarAlCarrito = (productoId) => {
+
     const item = PRODUCTOS.find((prod) => prod.id === productoId);
     const itemEnCarrito = CARRITO.find((prod) => prod.id === productoId);
 
@@ -54,6 +98,9 @@ const agregarAlCarrito = (productoId) => {
     }
     cargarEnStorage("carrito", JSON.stringify(CARRITO));
 }
+
+
+
 
 const cargarEnStorage = (key,value) => {
     localStorage.setItem(key,value);
