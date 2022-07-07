@@ -1,4 +1,4 @@
-
+/* 
 let product = "";
 let price = 0;
 let priceConIva = 0;
@@ -116,3 +116,4 @@ class productos {
         `);
     }
 
+ */

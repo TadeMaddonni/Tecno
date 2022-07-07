@@ -1,15 +1,19 @@
 
 
-let CARRITO =[]; 
+let CARRITO =[];
 CARRITO=JSON.parse(localStorage.getItem('carrito'));
-console.log(CARRITO)
+let cartContainer = document.getElementById("contentContainer");
+
+// console.log(CARRITO)
 
 
 //Mostrar carrito
 const mostrarCarrito = () => {
 
+
+
     CARRITO.forEach(prod => {
-        let cartContainer = document.getElementById("contentContainer");
+        
 
         let div = document.createElement("div");
         div.classList.add("productCartContainer")
@@ -21,7 +25,7 @@ const mostrarCarrito = () => {
                             <div class="cartCantContainer">
                                 <button class="cartCantBtn"> <svg class="cartCantIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                                        </svg> 
+                                        </svg>
                                 </button>
                                 <span class="cartCant">${prod.cantidad}</span>
                                 <button class="cartCantBtn">
@@ -34,22 +38,20 @@ const mostrarCarrito = () => {
                             <div class="cartPriceContainer">
                                 <p class="cartPrice">$${prod.precio}</p>
                             </div>
-                                
+
                         `
 
         cartContainer.appendChild(div);
     })
 }
 
-
-
 mostrarCarrito();
 
-//Creando Cards dinámicas 
+//Creando Cards dinámicas
 const mostrarProductos = () => {
 
     const container = document.querySelector("#sectionProductos");
-    
+
 
     PRODUCTOS.forEach(producto => {
         const DIV = document.createElement("div");
@@ -75,9 +77,12 @@ const mostrarProductos = () => {
 
         btnAgregarAlCarrito.addEventListener('click', () => {
             agregarAlCarrito(producto.id);
-            console.log(CARRITO)
+            cartContainer.innerHTML= "";
+            console.log(CARRITO);
+            mostrarCarrito();
+
         });
-        
+
     })
 };
 
@@ -100,6 +105,13 @@ const agregarAlCarrito = (productoId) => {
 }
 
 
+
+function vaciarCarrito () {
+    CARRITO = [];
+    cartContainer.innerHTML= "";
+    cargarEnStorage=localStorage.setItem('carrito', JSON.stringify(CARRITO));
+    mostrarCarrito();
+}
 
 
 const cargarEnStorage = (key,value) => {
