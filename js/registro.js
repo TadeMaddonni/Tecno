@@ -1,4 +1,10 @@
 
+let iniciado 
+
+iniciado=sessionStorage.getItem('iniciado');  
+
+
+// Funciones 
 class usuarios {
     constructor(nombre, apellido, email, password) {
             this.nombre = nombre,
@@ -12,34 +18,48 @@ const cargarDataEnStorage = (key,value) => {
     localStorage.setItem(key,value);
 }
 
-// Obtenemos data de registro almacenada y la parseamos a objetos
-let userAlmacenado = JSON.parse(localStorage.getItem('usuario')) ; 
-console.log(userAlmacenado);
-console.log(typeof userAlmacenado);     
+const cargarDataEnSessionStorage = (key,value) => {
+    sessionStorage.setItem(key,value);
+}
 
-
-// Variable global del usuario
-
-//Obtención y almacenamiento de datos de registro
-
-const registroForm = document.getElementById('formularioRegistro');
-console.log(registroForm)
-
-registroForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const nombre = document.getElementById("registroNombre").value; 
-    const apellido = document.getElementById('registroApellido').value;
-    const email = document.getElementById('registroEmail').value;
-    const password = document.getElementById('registroPassword').value;
-
-
-    let user1  = new usuarios (nombre, apellido, email, password);
-    console.log(user1)
-
-    cargarDataEnStorage('usuario', JSON.stringify(user1))
+const usuarioIniciado = () => {
     
-})
+    iniciado=sessionStorage.getItem('iniciado');  
+    if(iniciado == "true" || iniciado == true){
+        
+        const iniciadoBtn = document.querySelector(".loggedInBtn");
+        iniciadoBtn.setAttribute('style', 'display: inline;');
+
+        const btnSignUp= document.getElementById("signUpBtn")
+        btnSignUp.setAttribute('style', 'display: none;');
+        
+        const btnLogIn = document.getElementById("logInBtn")
+        btnLogIn.setAttribute('style', 'display: none;');
+    } 
+}
+
+usuarioIniciado();
+
+
+// Variable  y fucnción de iniciado 
+
+
+
+
+// Creación de variables para la validacion del registro
+
+nombreRegistroValido = false;
+apellidoRegistroValido = false;
+emailRegistroValido = false;
+passwordRegistroValido = false;
+
+
+
+
+// Obtenemos data de registro almacenada y la parseamos a objetos
+let userAlmacenado = JSON.parse(localStorage.getItem('usuario')); 
+
+
 
 
 // Validación de campos 
@@ -55,6 +75,7 @@ const passwordRegistro = document.getElementById('registroPassword');
             texto.innerHTML =`<p class = "mensajeError">
                                 El mail es valido
                                 </p>`;
+            emailRegistroValido=true
 
                             
         }else{
@@ -63,6 +84,7 @@ const passwordRegistro = document.getElementById('registroPassword');
                                 El mail ingresado no es valido
                                 </p>
                             `;
+            emailRegistroValido=false
         }
     }) 
     passwordRegistro.addEventListener('blur',() => {
@@ -72,6 +94,7 @@ const passwordRegistro = document.getElementById('registroPassword');
                                 La contraseña es valida
                                 </p>`;
 
+        passwordRegistroValido = true;
                             
         }else{
             const texto = document.querySelector('.passwordError');
@@ -79,6 +102,8 @@ const passwordRegistro = document.getElementById('registroPassword');
                                     Recorda tener al menos 6 caracteres
                                 </p>
                             `;
+            passwordRegistroValido =false;
+                        
         }
     }) 
     apellidoRegistro.addEventListener('blur',() => {
@@ -87,7 +112,7 @@ const passwordRegistro = document.getElementById('registroPassword');
             texto.innerHTML =`<p class = "mensajeError">
                                 El apellido es valido
                                 </p>`;
-
+            apellidoRegistroValido = true
                             
         }else{
             const texto = document.querySelector('.surnameError');
@@ -95,6 +120,7 @@ const passwordRegistro = document.getElementById('registroPassword');
                                 El apellido ingresado no es valido
                                 </p>
                             `;
+            apellidoRegistroValido = false
         }
     }) 
     nombreRegistro.addEventListener('blur',() => {
@@ -103,6 +129,7 @@ const passwordRegistro = document.getElementById('registroPassword');
             texto.innerHTML =`<p class = "mensajeError">
                                 El nombre ingresado es valido
                                 </p>`;
+            nombreRegistroValido = true
 
                             
         }else{
@@ -111,7 +138,78 @@ const passwordRegistro = document.getElementById('registroPassword');
                                 El nombre ingresado no es valido
                                 </p>
                             `;
-        }
+        nombreRegistroValido = false; 
+                        }
     });
 
+
+// Validación para registrarse 
+
+const registroForm = document.getElementById('formularioRegistro');
+
+const validarIngreso = (nombre, apellido, email, password) => {
+    if(nombreRegistroValido === true && apellidoRegistroValido === true && emailRegistroValido === true && passwordRegistroValido === true){
+        let user1 = new usuarios (nombre, apellido, email, password); 
+        cargarDataEnStorage('usuario', JSON.stringify(user1));
+        swal("Usuario creado correctamente", "Bienvenido/a a TecnoArg!", "success");
+    }else{
+        swal("No se ha podido crear el usuario", "Algunos de los datos no es correcto, vuelva a intentarlo!");
+    }
+}
+
+registroForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nombre = document.getElementById("registroNombre").value; 
+    const apellido = document.getElementById('registroApellido').value;
+    const email = document.getElementById('registroEmail').value;
+    const password = document.getElementById('registroPassword').value;
+
+    validarIngreso(nombre, apellido, email, password);
+    registroForm.reset(); 
+    userAlmacenado = JSON.parse(localStorage.getItem('usuario')); 
+})
+
+
 // Validación LOG IN arranco el 8/7
+
+const inicioForm = document.getElementById("inicioForm");
+console.log(inicioForm);
+
+let incioEmail = document.getElementsByClassName('inicioEmail');
+let incioNombre = document.getElementsByClassName('inicioNombre');
+
+inicioForm.addEventListener('submit', (e) =>{
+
+    e.preventDefault();
+
+    const email = document.getElementById('inicioEmail'); 
+    const password = document.getElementById('incioPassword'); 
+    console.log(password, email)
+
+    let emailAlmacenado = userAlmacenado.email;
+    let passwordAlmacenado = userAlmacenado.password; 
+
+
+    console.log(emailAlmacenado, passwordAlmacenado, email.value, password.value)
+
+    if( password.value == passwordAlmacenado && email.value == emailAlmacenado){
+        swal("Te extrañamos!", "Gracias por iniciar sesión en TecnoArg", "success");
+        iniciado = true;
+        cargarDataEnSessionStorage('iniciado', iniciado);
+        usuarioIniciado();
+    } else{
+        swal('Credenciales incorrectas', "Alguno de los datos ingresados no coincide!");
+        cargarDataEnSessionStorage('iniciado', iniciado);
+    }
+
+    inicioForm.reset();
+    
+
+})
+
+
+
+
+
+

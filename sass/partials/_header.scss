@@ -71,6 +71,9 @@
     padding: 4px 10px;
     background-color: $main-color;
     border-radius: 4px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .login-btn{
@@ -85,4 +88,17 @@
     font-weight: 700;
     transition: .3s;
     border: none;
+}
+
+.LoggedInIconContainer{
+    padding-left: 55px;
+}
+
+.loggedIn{
+    fill: $main-color;
+}
+
+.loggedInBtn{
+    display: none; 
+    margin-right: 30px;
 }

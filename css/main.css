@@ -118,6 +118,9 @@ img::selection {
   padding: 4px 10px;
   background-color: #7B68EC;
   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-btn {
@@ -133,6 +136,59 @@ img::selection {
   border: none;
 }
 
+.LoggedInIconContainer {
+  padding-left: 55px;
+}
+
+.loggedIn {
+  fill: #7B68EC;
+}
+
+.loggedInBtn {
+  display: none;
+  margin-right: 30px;
+}
+
+/* Alerts */
+/* .swal-overlay {
+    background-color: rgba(255, 255, 255, 0.45);
+}
+*/
+.swal-modal {
+  padding-right: 0;
+}
+
+.swal-title {
+  margin: 40px 0px;
+  padding: 30px 10px;
+  font-size: 22px;
+  font-size: 23px;
+  margin-bottom: 28px;
+  background-color: #fff;
+  color: #7B68EC;
+}
+
+.swal-text {
+  width: 100%;
+  padding: 20px;
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #7B68EC;
+  font-weight: 600;
+}
+
+.swal-button {
+  font-size: 12px;
+  color: #fff;
+  background-color: #7B68EC;
+}
+
+/*
+.swal-button:hover{
+    background-color: $secondary-color;
+    text-shadow: $secondary-color;
+} */
 /* Main Index */
 .mainIndex {
   margin-top: 60px;
