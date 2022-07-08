@@ -11,7 +11,7 @@ let cartContainer = document.getElementById("contentContainer");
 const mostrarCarrito = () => {
 
     CARRITO.forEach(prod => {
-        
+        let precioFinal = prod.cantidad * prod.precio; 
         let div = document.createElement("div");
         div.classList.add("productCartContainer")
         div.innerHTML = `
@@ -20,12 +20,13 @@ const mostrarCarrito = () => {
                                 <p class="cartProductName">${prod.nombre}</p>
                             </div>
                             <div class="cartCantContainer">
-                                <button class="cartCantBtn"> <svg class="cartCantIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                                <button class="cartCantBtn addCantBtn" id= "${prod.id}"> 
+                                    <svg class="cartCantIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-                                        </svg>
+                                    </svg>
                                 </button>
                                 <span class="cartCant">${prod.cantidad}</span>
-                                <button class="cartCantBtn">
+                                <button class="cartCantBtn" data= "${prod.id}" onclick="aumentarCantidad()">
                                     <svg class="cartCantIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
                                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
                                     </svg>
@@ -33,7 +34,7 @@ const mostrarCarrito = () => {
                             </div>
 
                             <div class="cartPriceContainer">
-                                <p class="cartPrice">$${prod.precio}</p>
+                                <p class="cartPrice">$${precioFinal}</p>
                             </div>
                         `
 
@@ -49,6 +50,8 @@ const mostrarProductos = () => {
     const container = document.querySelector("#sectionProductos");
 
     PRODUCTOS.forEach(producto => {
+        
+
         const DIV = document.createElement("div");
         DIV.classList.add("aurisProduct");
         DIV.innerHTML = `
@@ -63,7 +66,7 @@ const mostrarProductos = () => {
                                     </svg>
                                 </button>
                             </div>
-                            <p class="aurisPrecio">$${producto.precio * producto.cantidad}</p>
+                            <p class="aurisPrecio">$${producto.precio}</p>
                         `
 
         container.appendChild(DIV);
