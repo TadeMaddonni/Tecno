@@ -727,6 +727,53 @@ label {
   font-weight: 600;
 }
 
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalDatos {
+  display: flex;
+  justify-content: center;
+}
+
+.dataTitle {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #7B68EC;
+}
+
+.separadorInfo {
+  display: flex;
+  gap: 10px;
+}
+
+.infoDataContainer {
+  border-radius: 6px;
+  margin-top: 30px;
+  background-color: #7B68EC;
+  box-shadow: 0px 2px 21px -4px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 2px 21px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 21px -4px rgba(0, 0, 0, 0.75);
+  width: 90%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dataInfo {
+  color: #fff;
+  font-weight: 500;
+}
+
+.dataInfoTitle {
+  font-weight: 700;
+}
+
 /* Comienza main Paginas individuales! */
 .mainProductPage {
   display: flex;

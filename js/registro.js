@@ -167,6 +167,7 @@ registroForm.addEventListener('submit', (e) => {
 
     validarIngreso(nombre, apellido, email, password);
     registroForm.reset(); 
+    window.location.reload();
     userAlmacenado = JSON.parse(localStorage.getItem('usuario')); 
 })
 
@@ -210,6 +211,50 @@ inicioForm.addEventListener('submit', (e) =>{
 
 
 
+
+
+
+// Apartado individual (Usuario ya iniciado)
+
+let mensajeIndividual = document.querySelector(".mensajePersonalizado");
+
+mensajeIndividual.innerText = `Hola!, ${userAlmacenado.nombre}`
+
+mensajeIndividual.classList.add("dropdown-item");
+
+
+let dataSeccion = document.querySelector(".infoDataContainer");
+
+// Imprimiendo datos
+
+dataSeccion.innerHTML=`
+
+                        <div class="separadorInfo">
+                        <p class="dataInfo dataInfoTitle"> Nombre: <p class="dataInfo">${userAlmacenado.nombre}</p></p>
+                        </div>
+
+                        <div class="separadorInfo">
+                        <p class="dataInfo dataInfoTitle"> Apellido: <p class="dataInfo">${userAlmacenado.apellido}</p></p>
+                        </div>
+
+                        <div class="separadorInfo">
+                        <p class="dataInfo dataInfoTitle"> Email: <p class="dataInfo">${userAlmacenado.email}</p></p>
+                        </div>
+
+                        `
+
+
+// Cerrar sesión btn
+
+let cerrarSesionBtn = document.querySelector(".cerrarSesion");
+
+const cerrarSesion = () => {
+    iniciado=false;
+    cargarDataEnSessionStorage('iniciado', iniciado);
+    usuarioIniciado();
+    window.location.reload();
+}
+cerrarSesionBtn.addEventListener('click', cerrarSesion);
 
 
 
