@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda | TecnoArg</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/imgs/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/imgs/favicon.ico" type="image/x-icon">
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,8 +66,10 @@
                             </svg>
                         </button>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Mis datos</a></li>
-                        <li><button class="dropdown-item" href="#">Cerrar sesión</button></li>
+                            <li><span class="mensajePersonalizado dropdown-item"></span>
+                            </li>
+                            <li><button class="dropdown-item btnDatos" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal4">Mis datos</button></li>
+                            <li><button class="dropdown-item cerrarSesion" type="button">Cerrar sesión</button></li>
                         </ul>
                     </div>
                     <div>
@@ -242,7 +244,7 @@
                                     Vaciar 
                                 </button>
 
-                                <button class="cartBtns">
+                                <button class="cartBtns btnComprar">
                                     Comprar
                                 </button>
                             </div>
@@ -254,6 +256,35 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal datos usuario -->
+        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Mis datos!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="modalDatos">
+                            <span class="dataTitle">Tu información!</span>
+                        </div>
+
+                        <div class="infoDataContainer">
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="modal-footer mt-5">
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <section class="sectionTitle"> 
             <div class="titleContainer">

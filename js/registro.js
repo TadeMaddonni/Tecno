@@ -22,6 +22,12 @@ const cargarDataEnSessionStorage = (key,value) => {
     sessionStorage.setItem(key,value);
 }
 
+
+
+// Obtenemos data de registro almacenada y la parseamos a objetos
+let userAlmacenado = JSON.parse(localStorage.getItem('usuario')); 
+
+
 const usuarioIniciado = () => {
     
     iniciado=sessionStorage.getItem('iniciado');  
@@ -35,6 +41,38 @@ const usuarioIniciado = () => {
         
         const btnLogIn = document.getElementById("logInBtn")
         btnLogIn.setAttribute('style', 'display: none;');
+
+        
+
+        // Apartado individual (Usuario ya iniciado)
+
+        let mensajeIndividual = document.querySelector(".mensajePersonalizado");
+
+        mensajeIndividual.innerText = `Hola, ${userAlmacenado.nombre}!`
+
+        mensajeIndividual.classList.add("dropdown-item");
+
+
+        let dataSeccion = document.querySelector(".infoDataContainer");
+
+        // Imprimiendo datos
+
+        dataSeccion.innerHTML=`
+
+                                <div class="separadorInfo">
+                                <p class="dataInfo dataInfoTitle"> Nombre: <p class="dataInfo resaltado">${userAlmacenado.nombre}</p></p>
+                                </div>
+
+                                <div class="separadorInfo">
+                                <p class="dataInfo dataInfoTitle"> Apellido: <p class="dataInfo resaltado">${userAlmacenado.apellido}</p></p>
+                                </div>
+
+                                <div class="separadorInfo">
+                                <p class="dataInfo dataInfoTitle"> Email: <p class="dataInfo resaltado">${userAlmacenado.email}</p></p>
+                                </div>
+
+                                `
+
     } 
 }
 
@@ -56,8 +94,6 @@ passwordRegistroValido = false;
 
 
 
-// Obtenemos data de registro almacenada y la parseamos a objetos
-let userAlmacenado = JSON.parse(localStorage.getItem('usuario')); 
 
 
 
@@ -175,7 +211,6 @@ registroForm.addEventListener('submit', (e) => {
 // Validación LOG IN arranco el 8/7
 
 const inicioForm = document.getElementById("inicioForm");
-console.log(inicioForm);
 
 let incioEmail = document.getElementsByClassName('inicioEmail');
 let incioNombre = document.getElementsByClassName('inicioNombre');
@@ -212,36 +247,6 @@ inicioForm.addEventListener('submit', (e) =>{
 
 
 
-
-
-// Apartado individual (Usuario ya iniciado)
-
-let mensajeIndividual = document.querySelector(".mensajePersonalizado");
-
-mensajeIndividual.innerText = `Hola!, ${userAlmacenado.nombre}`
-
-mensajeIndividual.classList.add("dropdown-item");
-
-
-let dataSeccion = document.querySelector(".infoDataContainer");
-
-// Imprimiendo datos
-
-dataSeccion.innerHTML=`
-
-                        <div class="separadorInfo">
-                        <p class="dataInfo dataInfoTitle"> Nombre: <p class="dataInfo">${userAlmacenado.nombre}</p></p>
-                        </div>
-
-                        <div class="separadorInfo">
-                        <p class="dataInfo dataInfoTitle"> Apellido: <p class="dataInfo">${userAlmacenado.apellido}</p></p>
-                        </div>
-
-                        <div class="separadorInfo">
-                        <p class="dataInfo dataInfoTitle"> Email: <p class="dataInfo">${userAlmacenado.email}</p></p>
-                        </div>
-
-                        `
 
 
 // Cerrar sesión btn
