@@ -219,23 +219,41 @@ inicioForm.addEventListener('submit', (e) =>{
 
     e.preventDefault();
 
+
+
     const email = document.getElementById('inicioEmail'); 
     const password = document.getElementById('incioPassword'); 
-    console.log(password, email)
-
-    let emailAlmacenado = userAlmacenado.email;
-    let passwordAlmacenado = userAlmacenado.password; 
 
 
-    console.log(emailAlmacenado, passwordAlmacenado, email.value, password.value)
+    let emailAlmacenado;
+    let passwordAlmacenado;
+
+
+    if(userAlmacenado===null || userAlmacenado === undefined){
+        swal("Recuerda que debes crearte un usuario!")
+    }else{
+        emailAlmacenado = userAlmacenado.email;
+        passwordAlmacenado = userAlmacenado.password; 
+    }
+
+
+    console.log(emailAlmacenado, passwordAlmacenado)
+
 
     if( password.value == passwordAlmacenado && email.value == emailAlmacenado){
+    
         swal("Te extrañamos!", "Gracias por iniciar sesión en TecnoArg", "success");
         iniciado = true;
         cargarDataEnSessionStorage('iniciado', iniciado);
         usuarioIniciado();
     } else{
-        swal('Credenciales incorrectas', "Alguno de los datos ingresados no coincide!");
+    
+        swal(
+        'Credenciales incorrectas', 
+        
+        `Alguno de los datos ingresados no coincide!
+        
+        Recuerda que debes haberte creado un Usuario!`);
         cargarDataEnSessionStorage('iniciado', iniciado);
     }
 
