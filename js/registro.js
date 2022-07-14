@@ -183,13 +183,20 @@ const passwordRegistro = document.getElementById('registroPassword');
 
 const registroForm = document.getElementById('formularioRegistro');
 
+const recargarVentana = () =>{
+    window.location.reload()
+}
+
+
 const validarIngreso = (nombre, apellido, email, password) => {
     if(nombreRegistroValido === true && apellidoRegistroValido === true && emailRegistroValido === true && passwordRegistroValido === true){
         let user1 = new usuarios (nombre, apellido, email, password); 
         cargarDataEnStorage('usuario', JSON.stringify(user1));
-        swal("Usuario creado correctamente", "Bienvenido/a a TecnoArg!", "success");
+            swal("Usuario creado correctamente", "Bienvenido/a a TecnoArg!", "success");
+            setTimeout(recargarVentana, 1500); 
     }else{
         swal("No se ha podido crear el usuario", "Algunos de los datos no es correcto, vuelva a intentarlo!");
+        setTimeout(recargarVentana, 1500); 
     }
 }
 
@@ -203,7 +210,7 @@ registroForm.addEventListener('submit', (e) => {
 
     validarIngreso(nombre, apellido, email, password);
     registroForm.reset(); 
-    window.location.reload();
+
     userAlmacenado = JSON.parse(localStorage.getItem('usuario')); 
 })
 
@@ -225,16 +232,16 @@ inicioForm.addEventListener('submit', (e) =>{
     const password = document.getElementById('incioPassword'); 
 
 
-    let emailAlmacenado;
-    let passwordAlmacenado;
+    let emailAlmacenado = userAlmacenado?.email;
+    let passwordAlmacenado =  userAlmacenado?.password;
 
-
+/* 
     if(userAlmacenado===null || userAlmacenado === undefined){
         swal("Recuerda que debes crearte un usuario!")
     }else{
         emailAlmacenado = userAlmacenado.email;
         passwordAlmacenado = userAlmacenado.password; 
-    }
+    } */
 
 
     console.log(emailAlmacenado, passwordAlmacenado)
@@ -243,6 +250,7 @@ inicioForm.addEventListener('submit', (e) =>{
     if( password.value == passwordAlmacenado && email.value == emailAlmacenado){
     
         swal("Te extrañamos!", "Gracias por iniciar sesión en TecnoArg", "success");
+
         iniciado = true;
         cargarDataEnSessionStorage('iniciado', iniciado);
         usuarioIniciado();
