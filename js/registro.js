@@ -226,26 +226,13 @@ inicioForm.addEventListener('submit', (e) =>{
 
     e.preventDefault();
 
-
-
     const email = document.getElementById('inicioEmail'); 
     const password = document.getElementById('incioPassword'); 
 
+    let emailAlmacenado = userAlmacenado?.email || "No se ha creado un usuario";
+    let passwordAlmacenado =  userAlmacenado?.password || "No se ha creado un usuario";
 
-    let emailAlmacenado = userAlmacenado?.email;
-    let passwordAlmacenado =  userAlmacenado?.password;
-
-/* 
-    if(userAlmacenado===null || userAlmacenado === undefined){
-        swal("Recuerda que debes crearte un usuario!")
-    }else{
-        emailAlmacenado = userAlmacenado.email;
-        passwordAlmacenado = userAlmacenado.password; 
-    } */
-
-
-    console.log(emailAlmacenado, passwordAlmacenado)
-
+    console.log(emailAlmacenado, passwordAlmacenado); 
 
     if( password.value == passwordAlmacenado && email.value == emailAlmacenado){
     

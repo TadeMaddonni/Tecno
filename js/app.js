@@ -4,11 +4,22 @@ let CARRITO =[];
 CARRITO=JSON.parse(localStorage.getItem('carrito')) || [];
 let cartContainer = document.getElementById("contentContainer");
 
+// Creacion variable total
+
+let total = 0
+
+const contarTotal = () =>{
+    total = 0
+    for (producto of CARRITO){
+        total += producto.precio * producto.cantidad
+    }
+    // console.log(total)
+}
 
 //Mostrar carrito
 const mostrarCarrito = () => {
     cartContainer.innerHTML="";
-
+    contarTotal();
     CARRITO.forEach(prod => {
         let precioFinal = prod.cantidad * prod.precio; 
         let div = document.createElement("div");
@@ -46,22 +57,7 @@ if(CARRITO != []){
 }
 
 
-// Comprar
 
-const realizarCompra = () => {
-    if(iniciado == true || iniciado == "true"){
-        // Falta determinar como seguir
-        window.location.replace("../pages/compra.html")
-    } else{
-        swal(
-        "No es posible realizar al compra",
-
-        `Debes tener una cuenta e iniciar sesión con la misma para poder realizar compras
-        
-        Att: TecnoArg`
-        )
-    }
-}
 
 
 
@@ -71,17 +67,14 @@ const agregarAlCarrito = (productoId) => {
     const item = PRODUCTOS.find((prod) => prod.id === productoId);
     const itemEnCarrito = CARRITO.find((prod) => prod.id === productoId);
 
-    if(itemEnCarrito){
-        itemEnCarrito.cantidad++;
-    } else{
-        CARRITO.push(item);
-    }
+    (itemEnCarrito) ? itemEnCarrito.cantidad++ : CARRITO.push(item);
     cargarEnStorage("carrito", JSON.stringify(CARRITO));
 }
 
 
 //Vaciar carrito function
 function vaciarCarrito () {
+
     CARRITO = [];
     cartContainer.innerHTML= "";
     cargarEnStorage('carrito', JSON.stringify(CARRITO))
@@ -133,11 +126,19 @@ const disminuirCantidadProducto = (id) => {
 }
 
 
-// Btn Comprar del carrito  
+// Btn Comprar del carrito
+
+
+const realizarCompra = () => {
+    (iniciado == true && total != 0 || iniciado == "true" && total != 0) ? window.location.replace("../pages/compra.html") : swal(
+                                                                                                        "No es posible realizar al compra",
+
+                                                                                                        `Debes tener una cuenta, luego iniciar sesión con la misma y haber seleccionado algun producto para poder realizar compras
+                                                                                                        
+                                                                                                        Att: TecnoArg`
+                                                                                                        )
+}  
 
 const btnComprar = document.querySelector(".btnComprar");
 
-
-
 btnComprar.addEventListener('click', realizarCompra);
-
