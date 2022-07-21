@@ -72,11 +72,11 @@ const agregarAlCarrito = (productoId) => {
 
     Toastify({
         text: "Producto agregado con éxito",
-        duration: 3000,
+        duration: 1500,
         close: true,
-        gravity: "bottom", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "bottom", 
+        position: "right", 
+        stopOnFocus: true, 
         style: {
             background: "#7B68EC",
             color:"#fff"
@@ -94,7 +94,7 @@ function vaciarCarrito () {
     mostrarCarrito();
     Toastify({
         text: "El carrito ha sido vaciado!",
-        duration: 3000,
+        duration: 1500,
         close: true,
         gravity: "bottom", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
