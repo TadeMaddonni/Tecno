@@ -69,6 +69,19 @@ const agregarAlCarrito = (productoId) => {
 
     (itemEnCarrito) ? itemEnCarrito.cantidad++ : CARRITO.push(item);
     cargarEnStorage("carrito", JSON.stringify(CARRITO));
+
+    Toastify({
+        text: "Producto agregado con éxito",
+        duration: 3000,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "#7B68EC",
+            color:"#fff"
+        },
+    }).showToast();
 }
 
 
@@ -79,6 +92,18 @@ function vaciarCarrito () {
     cartContainer.innerHTML= "";
     cargarEnStorage('carrito', JSON.stringify(CARRITO))
     mostrarCarrito();
+    Toastify({
+        text: "El carrito ha sido vaciado!",
+        duration: 3000,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "#7B68EC",
+            color:"#fff"
+        },
+    }).showToast();
 }
 
 // Subida a storage
