@@ -1,4 +1,3 @@
-//Creando Cards dinámicas
 
 const getData = async () => {
     const response = await fetch('../js/data.json')
