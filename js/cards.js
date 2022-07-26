@@ -1,9 +1,18 @@
 //Creando Cards dinámicas
-const mostrarProductos = () => {
+
+const getData = async () => {
+    const response = await fetch('../js/data.json')
+    const data = await response.json();
+
+    return data;
+}
+
+const mostrarProductos =  async () => {
 
     const container = document.querySelector("#sectionProductos");
 
-    PRODUCTOS.forEach(producto => {
+    const productos =  await getData();
+    productos.forEach(producto => {
         
 
         const DIV = document.createElement("div");
@@ -28,9 +37,9 @@ const mostrarProductos = () => {
         const btnAgregarAlCarrito = document.querySelector(`.agregar${producto.id}`);
 
         btnAgregarAlCarrito.addEventListener('click', () => {
-            agregarAlCarrito(producto.id);
+            agregarAlCarrito(producto.id, productos);
             cartContainer.innerHTML= "";
-            console.log(CARRITO);
+            // console.log(CARRITO);
             mostrarCarrito();
         });
     })

@@ -62,9 +62,9 @@ if(CARRITO != []){
 
 
 //Agregar producto al carrito y almacenarlo en Storage
-const agregarAlCarrito = (productoId) => {
+const agregarAlCarrito = (productoId, array) => {
 
-    const item = PRODUCTOS.find((prod) => prod.id === productoId);
+    const item = array.find((prod) => prod.id === productoId);
     const itemEnCarrito = CARRITO.find((prod) => prod.id === productoId);
 
     (itemEnCarrito) ? itemEnCarrito.cantidad++ : CARRITO.push(item);
