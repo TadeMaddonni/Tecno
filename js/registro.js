@@ -1,10 +1,10 @@
-
+// Declaracion e inicializacion de variable de iniciado
 let iniciado 
 
 iniciado=sessionStorage.getItem('iniciado');  
 
 
-// Funciones 
+// Creación de la clase y la funcion constructora de usuarios
 class usuarios {
     constructor(nombre, apellido, email, password) {
             this.nombre = nombre,
@@ -14,25 +14,27 @@ class usuarios {
     }
 }
 
+// Función de subida a LocalStorage
 const cargarDataEnStorage = (key,value) => {
     localStorage.setItem(key,value);
 }
 
+// Función de subida a sessionStorage
 const cargarDataEnSessionStorage = (key,value) => {
     sessionStorage.setItem(key,value);
 }
 
 
-
 // Obtenemos data de registro almacenada y la parseamos a objetos
 let userAlmacenado = JSON.parse(localStorage.getItem('usuario')); 
 
-
+// Funcion para cuando el usuario este loggeado o iniciado en la página 
 const usuarioIniciado = () => {
     
     iniciado=sessionStorage.getItem('iniciado');  
     if(iniciado == "true" || iniciado == true){
         
+        // Aplicación y retiro de atributos segun estado de inicio de sesión 
         const iniciadoBtn = document.querySelector(".loggedInBtn");
         iniciadoBtn.setAttribute('style', 'display: inline;');
 
@@ -45,18 +47,16 @@ const usuarioIniciado = () => {
         
 
         // Apartado individual (Usuario ya iniciado)
-
         let mensajeIndividual = document.querySelector(".mensajePersonalizado");
 
         mensajeIndividual.innerText = `Hola, ${userAlmacenado.nombre}!`
 
         mensajeIndividual.classList.add("dropdown-item");
 
-
+        // Captura de contendor de datos personales
         let dataSeccion = document.querySelector(".infoDataContainer");
 
         // Imprimiendo datos
-
         dataSeccion.innerHTML=`
 
                                 <div class="separadorInfo">
@@ -72,39 +72,27 @@ const usuarioIniciado = () => {
                                 </div>
 
                                 `
-
     } 
 }
 
 usuarioIniciado();
 
 
-// Variable  y fucnción de iniciado 
 
-
-
-
-// Creación de variables para la validacion del registro
-
+// Declaración e inicializacion de variables para la validacion del registro (Sign Up)
 nombreRegistroValido = false;
 apellidoRegistroValido = false;
 emailRegistroValido = false;
 passwordRegistroValido = false;
 
 
-
-
-
-
-
-
-// Validación de campos 
+// Validación de campos de registro 
 const nombreRegistro = document.getElementById("registroNombre"); 
 const apellidoRegistro = document.getElementById('registroApellido');
 const emailRegistro = document.getElementById('registroEmail');
 const passwordRegistro = document.getElementById('registroPassword');
 
-
+//Validación por campo individual de registro
     emailRegistro.addEventListener('blur',() => {
         if (emailRegistro.value.length > 0 && emailRegistro.value.includes("@") && emailRegistro.value.includes(".com")){
             const texto = document.querySelector('.emailError');
@@ -179,15 +167,14 @@ const passwordRegistro = document.getElementById('registroPassword');
     });
 
 
-// Validación para registrarse 
-
+// Validación final para registrarse
 const registroForm = document.getElementById('formularioRegistro');
 
 const recargarVentana = () =>{
     window.location.reload()
 }
 
-
+//Funcion para la carga en storage y almacenamiento si el usuario es creado correctamente o alerta si no ha sido posible crearlo
 const validarIngreso = (nombre, apellido, email, password) => {
     if(nombreRegistroValido === true && apellidoRegistroValido === true && emailRegistroValido === true && passwordRegistroValido === true){
         let user1 = new usuarios (nombre, apellido, email, password); 
@@ -200,6 +187,7 @@ const validarIngreso = (nombre, apellido, email, password) => {
     }
 }
 
+// Validacion final del formulario de registro
 registroForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -215,8 +203,7 @@ registroForm.addEventListener('submit', (e) => {
 })
 
 
-// Validación LOG IN arranco el 8/7
-
+// Validación del formulario de inicio de sesión (Log in, usuario ya creado previamente)
 const inicioForm = document.getElementById("inicioForm");
 
 let incioEmail = document.getElementsByClassName('inicioEmail');
@@ -253,17 +240,10 @@ inicioForm.addEventListener('submit', (e) =>{
     }
 
     inicioForm.reset();
-    
-
 })
 
 
-
-
-
-
-// Cerrar sesión btn
-
+// Captura de boton y creacion de función para el cierre de sesión
 let cerrarSesionBtn = document.querySelector(".cerrarSesion");
 
 const cerrarSesion = () => {

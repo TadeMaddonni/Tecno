@@ -8,15 +8,15 @@ let cartContainer = document.getElementById("contentContainer");
 
 let total = 0
 
+// Contador del total del carrito
 const contarTotal = () =>{
     total = 0
     for (producto of CARRITO){
         total += producto.precio * producto.cantidad
     }
-    // console.log(total)
 }
 
-//Mostrar carrito
+//Funcion para renderizar el carrito en el DOM
 const mostrarCarrito = () => {
     cartContainer.innerHTML="";
     contarTotal();
@@ -61,7 +61,7 @@ if(CARRITO != []){
 
 
 
-//Agregar producto al carrito y almacenarlo en Storage
+//Funcion para encontar el elemento y agregarlo al carrito. 
 const agregarAlCarrito = (productoId, array) => {
 
     const item = array.find((prod) => prod.id === productoId);
@@ -85,7 +85,7 @@ const agregarAlCarrito = (productoId, array) => {
 }
 
 
-//Vaciar carrito function
+//Función para vaciar el carrito
 function vaciarCarrito () {
 
     CARRITO = [];
@@ -96,9 +96,9 @@ function vaciarCarrito () {
         text: "El carrito ha sido vaciado!",
         duration: 1500,
         close: true,
-        gravity: "bottom", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "bottom",
+        position: "right", 
+        stopOnFocus: true, 
         style: {
             background: "#7B68EC",
             color:"#fff"
@@ -106,12 +106,13 @@ function vaciarCarrito () {
     }).showToast();
 }
 
-// Subida a storage
+// Función de subida a storage
 const cargarEnStorage = (key,value) => {
     localStorage.setItem(key,value);
 }
 
 
+// Captura de elementos para la modificación  de cantidades en el carrito
 const container = document.querySelector("#exampleModal2");
 
 container.addEventListener("click", (e) => {
@@ -124,6 +125,7 @@ container.addEventListener("click", (e) => {
     }
 })
 
+// Funcion para aumentar la cantidad del producto en el carrito
 const aumentarCantidadProducto = (id) => {
 
     let productoEnCarrito = CARRITO.find((prod) => prod.id === id)
@@ -132,6 +134,7 @@ const aumentarCantidadProducto = (id) => {
     mostrarCarrito();
 }
 
+// Funcion para disminuir la cantidad del producto en el carrito
 const disminuirCantidadProducto = (id) => {
 
     let productoEnCarrito = CARRITO.find((prod) => prod.id === id)
@@ -151,9 +154,7 @@ const disminuirCantidadProducto = (id) => {
 }
 
 
-// Btn Comprar del carrito
-
-
+// Función para acceder a la página de compra
 const realizarCompra = () => {
     (iniciado == true && total != 0 || iniciado == "true" && total != 0) ? window.location.replace("../pages/compra.html") : swal(
                                                                                                         "No es posible realizar al compra",
@@ -164,6 +165,6 @@ const realizarCompra = () => {
                                                                                                         )
 }  
 
+// Captura del boton de comprar y asignamientod e la funcion realizarCompra
 const btnComprar = document.querySelector(".btnComprar");
-
 btnComprar.addEventListener('click', realizarCompra);
