@@ -92,7 +92,9 @@ formVisa.addEventListener('submit', (e) => {
             },
             showCancelButton: true, 
             confirmButtonText: "Ir a envios",
-            cancelButtonText: "cancelar"
+            cancelButtonText: "cancelar",
+            background: "#fff",
+            color: "#7B68EC",
         }).then((result) => {
             if(result.isConfirmed){
                 window.location.replace("../pages/envio.html")
@@ -105,7 +107,8 @@ formVisa.addEventListener('submit', (e) => {
             text: "Chequee que los datos ingresados sean correctos",
             icon:"error",
             timer:2000, 
-            
+            background: "#fff",
+            color: "#7B68EC",
         });
     }
 })

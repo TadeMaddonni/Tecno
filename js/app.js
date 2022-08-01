@@ -146,7 +146,14 @@ const disminuirCantidadProducto = (id) => {
 
     }else{
         CARRITO.splice(CARRITO.indexOf(productoEnCarrito), 1);
-        swal("Producto Eliminado", "Producto retirado del carrito con éxito", "success")
+        swal.fire({
+            title:"Producto elimninado",
+            text:"Producto retirado del carrito con éxito",
+            icon:"success",
+            background: "#fff",
+            color: "#7B68EC",
+        })
+
         cargarEnStorage('carrito',JSON.stringify(CARRITO))
         mostrarCarrito();
     }
@@ -156,13 +163,16 @@ const disminuirCantidadProducto = (id) => {
 
 // Función para acceder a la página de compra
 const realizarCompra = () => {
-    (iniciado == true && total != 0 || iniciado == "true" && total != 0) ? window.location.replace("../pages/compra.html") : swal(
-                                                                                                        "No es posible realizar al compra",
+    (iniciado == true && total != 0 || iniciado == "true" && total != 0) ? window.location.replace("../pages/compra.html") : swal.fire({
 
-                                                                                                        `Debes tener una cuenta, luego iniciar sesión con la misma y haber seleccionado algun producto para poder realizar compras
-                                                                                                        
-                                                                                                        Att: TecnoArg`
-                                                                                                        )
+                                                                                                                                title:"No es posible realizar al compra",
+                                                                                                                                text:`Debes tener una cuenta, luego iniciar sesión con la misma y haber seleccionado algun producto para poder realizar compras
+                                                                                                                                                                                                                                
+                                                                                                                                        Att: TecnoArg`,
+                                                                                                                                icon:"error",
+                                                                                                                                background: "#fff",
+                                                                                                                                color: "#7B68EC",
+                                                                                                                            })
 }  
 
 // Captura del boton de comprar y asignamientod e la funcion realizarCompra

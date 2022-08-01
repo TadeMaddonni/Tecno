@@ -51,7 +51,9 @@ envioForm.addEventListener("submit",(e) => {
             },
             showCancelButton: true, 
             confirmButtonText: "Confirmar",
-            cancelButtonText: "Cancelar"
+            cancelButtonText: "Cancelar",
+            background: "#fff",
+            color: "#7B68EC",
         }).then( (result) => {
             if(result.isConfirmed){
                 window.location.replace("../index.html")
@@ -64,6 +66,8 @@ envioForm.addEventListener("submit",(e) => {
             icon:"error",
             title:"Direccion incorrecta",
             text: `no ha sido posible encontrar la dirección, por favor revise los datos`,
+            background: "#fff",
+            color: "#7B68EC",
 
         })
         envioForm.reset();

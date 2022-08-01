@@ -1,0 +1,57 @@
+@media (min-width: 708px)  and ( max-width: 979px ){
+
+
+    //modal forms
+    .modalCarrito{
+        width: 100%;
+        margin: auto;
+    }
+
+    #sectionProductos{
+        margin-top: 50px;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-around;
+        row-gap: 5rem;
+    }
+
+    .aurisProduct{
+        padding: 5px;
+        width:15.5rem;
+        height: 18rem;
+    }
+
+    .aurisImg{
+        img{
+            height: 180px;
+            width: 100%;
+        }
+    }
+
+    .aurisDescription{
+        font-size: 15px;
+    }
+
+    //Nosotros
+
+    #nosotros{
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nosotrosContainer{
+        width: 50%;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .sectionContainer{
+        width: 70%;
+        gap: 20px;
+    }
+
+    .mainText{
+        width: 100%;
+    }
+}

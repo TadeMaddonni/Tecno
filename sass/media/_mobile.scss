@@ -1,4 +1,4 @@
-@media screen and (min-width:230px) and (max-width:550px){
+@media screen and (min-width:230px) and (max-width:750px){
 
     #nosotros{
         height: 500px;
@@ -7,9 +7,11 @@
     }
     .nosotrosContainer{
         width:80%;
+        padding: 20px;
     }
     .sectionContainer{
-        width: 90%;
+        width: 95%;
+        gap: 20px;
     }
     .mainText{
         font-size: 26px;
@@ -33,4 +35,102 @@
     .formSection{
         padding: 20px;
     }
+
+    #sectionProductos{
+        margin-top: 50px;
+        display:grid;
+        grid-template-columns: 1fr;
+        justify-content: space-around;
+        row-gap: 5rem;
+    }
+
+    .aurisProduct{
+        padding: 5px;
+        width:15.5rem;
+        height: 18rem;
+    }
+
+    .aurisImg{
+        img{
+            height: 180px;
+            width: 100%;
+        }
+    }
+
+    .aurisDescription{
+        font-size: 15px;
+    }
+
+
+    .cartSection{
+        width: 100%;
+    }
+    .modalCarrito{
+        width: 90%;
+        margin: auto;
+    }
+
+    .cartTitles{
+        font-size: 10px;
+    }
+
+    .cartPrice{
+        font-size: 10px;
+    }
+
+    .cartProductName{
+        font-size: 8px;
+    }
+
+    .cartProductImg{
+        width: 30px;
+        height: 30px;
+    }
+
+    .cartCant{
+        font-size: 8px;
+    }
+
+    .cartCantIcon{
+        width: 10px;
+        height: 10px;
+    }
+
+    .cartBtns{
+        font-size: 11px;
+    }
+
+
+    .contactoInputContainer, .textareaCOntainer{
+        padding-right: 23px;
+        padding-left: 23px;
+        background-color: $main-color;
+    }
+
+    .loginFormSection{
+        width: 95%;
+    }
+
+    .loginFormContainer{
+        height: 100%;
+    }
+    .loginForm{
+        padding-top:30px;
+        padding-bottom: 30px;
+        border-radius: 5px;
+    }
+
+    .dataInfo {
+        font-size: 12px;
+    }
+
+    .mensajeError{
+        margin: 0;
+        font-size: 12px;
+        padding: 2px 10px;
+    }
+/* 
+    .loginFormContainer{
+
+    } */
 }

@@ -128,7 +128,7 @@
         "id": 15,
         "nombre": "Xiaomi 11",
         "Img": "../assets/imgs/productos/celus/xiaomi11.jpg",
-        "Tipo": "cels",
+        "tipo": "cels",
         "precio": 120000,
         "cantidad":1
     },

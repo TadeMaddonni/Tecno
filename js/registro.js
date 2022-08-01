@@ -179,10 +179,20 @@ const validarIngreso = (nombre, apellido, email, password) => {
     if(nombreRegistroValido === true && apellidoRegistroValido === true && emailRegistroValido === true && passwordRegistroValido === true){
         let user1 = new usuarios (nombre, apellido, email, password); 
         cargarDataEnStorage('usuario', JSON.stringify(user1));
-            swal("Usuario creado correctamente", "Bienvenido/a a TecnoArg!", "success");
+
+            swal.fire({
+                title: "Usuario creado correctamente",
+                text: "Bienvenido/a a TecnoArg",
+                icon: "success",
+            })
             setTimeout(recargarVentana, 1500); 
     }else{
-        swal("No se ha podido crear el usuario", "Algunos de los datos no es correcto, vuelva a intentarlo!");
+        swal.fire({
+            background: "#fff",
+            color: "#7B68EC",
+            title: "No se ha podido crear el usuario",
+            text:"Algunos de los datos no es correcto, vuelva a intentarlo!"
+        })
         setTimeout(recargarVentana, 1500); 
     }
 }
@@ -223,19 +233,29 @@ inicioForm.addEventListener('submit', (e) =>{
 
     if( password.value == passwordAlmacenado && email.value == emailAlmacenado){
     
-        swal("Te extrañamos!", "Gracias por iniciar sesión en TecnoArg", "success");
-
+        swal.fire({
+            title: "¡Te extrañamos!",
+            text: "Gracias por iniciar sesión en TecnoArg",
+            icon:"success",
+            background: "#fff",
+            color: "#7B68EC",
+        })
         iniciado = true;
         cargarDataEnSessionStorage('iniciado', iniciado);
         usuarioIniciado();
     } else{
     
-        swal(
-        'Credenciales incorrectas', 
-        
-        `Alguno de los datos ingresados no coincide!
-        
-        Recuerda que debes haberte creado un Usuario!`);
+        swal.fire({
+            title: "Credenciales incorrectas",
+            text:        
+            `Alguno de los datos ingresados no coincide!
+            
+            Recuerda que debes haberte creado un Usuario!`,
+            icon:"error",
+            background: "#fff",
+            color: "#7B68EC",
+
+        })
         cargarDataEnSessionStorage('iniciado', iniciado);
     }
 
