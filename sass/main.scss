@@ -466,6 +466,7 @@ label{
 
 .modalCarrito{
     width: 650px;
+    margin: auto;
 }
 
 .cartLines{
@@ -747,4 +748,15 @@ label{
 .titleTienda{
     font-weight: 700;
     font-size: 34px;
+}
+
+.modalContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.modal-dialog{
+    width: fit-content !important;
 }
