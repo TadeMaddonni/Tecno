@@ -9,7 +9,7 @@ let codigoPostalValido  = false;
 
 // Validación especifica del campo de direccion de envio
 direccionEnvio.addEventListener('blur', () =>{
-    if(direccionEnvio.value.length > 5 ){
+    if(direccionEnvio.value.length > 5  && direccionEnvio.value.includes(" ")){
         direccionValida = true; 
         const mensajeErrorCodigo = document.querySelector(".mensajePersonalizadoDireccion")
         mensajeErrorCodigo.innerHTML= `
@@ -26,9 +26,12 @@ direccionEnvio.addEventListener('blur', () =>{
 // Validación especifica del campo de código postal
 codigoPostal.addEventListener('blur', () =>{
 
-    if( codigoPostal.value.length > 3){
+    if( codigoPostal.value.length > 3 && codigoPostal.value.length < 6){
         codigoPostalValido= true;
-        
+        const mensajeErrorCodigo = document.querySelector(".mensajePersonalizadoCodigo")
+        mensajeErrorCodigo.innerHTML= `
+                                        <P class = "mensajeError"> Codigo postal valido</P>
+                                        `
     }else{
         const mensajeErrorCodigo = document.querySelector(".mensajePersonalizadoCodigo")
         mensajeErrorCodigo.innerHTML= `

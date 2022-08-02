@@ -24,7 +24,7 @@ Creación de un simulador interactivo de un e-commerce, con posibilidad de creac
 
     LocalStorage y sessionStorage para el almacenamiento de información 
 
-    Fetch para la obtencion de archivos JSON con array de objetos
+    Fetch para la obtencion de archivos JSON 
 
     SweetAlert y Toastify para agregar comunicación directa al usuario
 
