@@ -102,7 +102,7 @@ formVisa.addEventListener('submit', (e) => {
         })
 
     }else{
-        swal({
+        swal.fire({
             title: "Tarjeta rechazada",
             text: "Chequee que los datos ingresados sean correctos",
             icon:"error",
