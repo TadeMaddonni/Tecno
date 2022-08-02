@@ -51,12 +51,12 @@ const mostrarCarrito = () => {
         cartContainer.appendChild(div);
     })
 }
-/* 
+
 if(CARRITO != []){
     mostrarCarrito(); 
 }
 
- */
+
 
 
 
