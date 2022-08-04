@@ -1,6 +1,6 @@
 // Función para acceder a la página de compra
 const realizarCompra = () => {
-    (iniciado == true && total != 0 || iniciado == "true" && total != 0) ? window.location.replace("/pages/compra.html") : swal.fire({
+    (iniciado == true && total != 0 || iniciado == "true" && total != 0) ? window.location.replace("pages/compra.html") : swal.fire({
 
                                                                                                                                 title:"No es posible realizar al compra",
                                                                                                                                 text:`Debes tener una cuenta, luego iniciar sesión con la misma y haber seleccionado algun producto para poder realizar compras
