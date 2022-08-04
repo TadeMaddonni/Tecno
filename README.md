@@ -3,6 +3,8 @@
 
 Creación de un simulador interactivo de un e-commerce, con posibilidad de creación de usuario, inicio de sesión, carrito, seccion compra y envios!
 
+Link del proyecto en la sección de about aun asi lo dejo por aca tecnoarg.netlify.app
+
 | Color             | Codigo                                                              |
 | ----------------- | ------------------------------------------------------------------ |
 | Color principal| ![#7B68EC](https://via.placeholder.com/10/7B68EC?text=+) #7B68EC|
